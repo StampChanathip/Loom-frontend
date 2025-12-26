@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import { QueryProviders } from "@/shared/providers/QueryProvider";
@@ -9,19 +9,23 @@ import { ToastProvider } from "@/shared/providers/ToastProvider";
 import ToastWrapper from "@/components/utils/ToastWrapper";
 import SessionInitializer from "@/components/providers/SessionInitializer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "NextJS Boilerplate",
-  description: "NextJS Frontend Boilerplate",
+  title: "Loom - AI Learning Path Visualizer",
+  description:
+    "Transform any topic into an interactive, explorable visual map showing prerequisites, core concepts, and advanced topics with progress tracking.",
 };
 
 export default function RootLayout({
@@ -34,7 +38,7 @@ export default function RootLayout({
       <QueryProviders>
         <Suspense fallback={<Loading children={undefined} />}>
           <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${inter.variable} ${firaCode.variable} antialiased`}
           >
             <ToastProvider>
               <SessionInitializer />

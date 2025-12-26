@@ -42,3 +42,6 @@ next-env.d.ts
 
 # claude code
 .claude
+.clinerules
+LOOM_PROJECT_OVERVIEW.md
+DESIGN_SYSTEM.md

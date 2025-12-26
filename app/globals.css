@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 
 @theme inline {
+  /* Colors */
   --color-background: hsl(var(--background));
   --color-secondary-bg: hsl(var(--secondary-bg));
   --color-foreground: hsl(var(--foreground));
@@ -37,168 +38,358 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  --color-surface: hsl(var(--surface));
+  --color-surface-hover: hsl(var(--surface-hover));
+
+  /* Chart colors */
   --color-chart-1: hsl(var(--chart-1));
   --color-chart-2: hsl(var(--chart-2));
   --color-chart-3: hsl(var(--chart-3));
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
+
+  /* Node category colors */
+  --color-prerequisite-main: hsl(var(--prerequisite-main));
+  --color-prerequisite-light: hsl(var(--prerequisite-light));
+  --color-prerequisite-bg: hsl(var(--prerequisite-bg));
+  --color-prerequisite-border: hsl(var(--prerequisite-border));
+  --color-core-main: hsl(var(--core-main));
+  --color-core-light: hsl(var(--core-light));
+  --color-core-bg: hsl(var(--core-bg));
+  --color-core-border: hsl(var(--core-border));
+  --color-advanced-main: hsl(var(--advanced-main));
+  --color-advanced-light: hsl(var(--advanced-light));
+  --color-advanced-bg: hsl(var(--advanced-bg));
+  --color-advanced-border: hsl(var(--advanced-border));
+
+  /* Border Radius */
   --radius-sm: var(--radius-sm-value);
   --radius-md: var(--radius-md-value);
   --radius-lg: var(--radius-lg-value);
   --radius-xl: var(--radius-xl-value);
+  --radius-2xl: var(--radius-2xl-value);
   --radius-full: var(--radius-full-value);
+
+  /* Shadows */
   --shadow-sm: var(--shadow-sm-value);
   --shadow-md: var(--shadow-md-value);
   --shadow-lg: var(--shadow-lg-value);
   --shadow-xl: var(--shadow-xl-value);
+  --shadow-2xl: var(--shadow-2xl-value);
+  --shadow-inner: var(--shadow-inner-value);
+  --shadow-primary: var(--shadow-primary-value);
+  --shadow-success: var(--shadow-success-value);
+
+  /* Spacing */
   --spacing-xs: var(--spacing-xs-value);
   --spacing-sm: var(--spacing-sm-value);
   --spacing-md: var(--spacing-md-value);
   --spacing-lg: var(--spacing-lg-value);
   --spacing-xl: var(--spacing-xl-value);
   --spacing-2xl: var(--spacing-2xl-value);
+  --spacing-3xl: var(--spacing-3xl-value);
+  --spacing-4xl: var(--spacing-4xl-value);
+
+  /* Typography */
+  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-mono: "Fira Code", "Monaco", "Courier New", monospace;
+
+  /* Transitions */
+  --transition-fast: var(--transition-fast);
+  --transition-base: var(--transition-base);
+  --transition-slow: var(--transition-slow);
+  --transition-slower: var(--transition-slower);
 }
 
 :root {
-  /* Primary Colors - #d97706 (Amber Gold primary) */
-  --primary: 30 97% 43%;
+  /* Primary Colors - Vibrant Green (#39ac73) */
+  --primary-50: 138 100% 97%;
+  --primary-100: 141 84% 93%;
+  --primary-200: 141 78% 85%;
+  --primary-300: 142 77% 73%;
+  --primary-400: 142 69% 58%;
+  --primary-500: 150 50% 45%; /* Main brand color #39ac73 */
+  --primary-600: 152 52% 36%;
+  --primary-700: 153 48% 28%;
+  --primary-800: 152 44% 22%;
+  --primary-900: 151 49% 19%;
+
+  --primary: 150 50% 45%;
   --primary-foreground: 0 0% 100%;
-  --primary-light: 45 93% 58%;
-  --primary-dark: 25 87% 35%;
+  --primary-light: 142 69% 58%;
+  --primary-dark: 152 52% 36%;
 
-  /* Secondary Colors - #f59e0b (Amber secondary) */
-  --secondary: 38 92% 50%;
+  /* Secondary Colors - Complementary Teal */
+  --secondary-50: 166 76% 97%;
+  --secondary-100: 167 85% 89%;
+  --secondary-200: 168 84% 78%;
+  --secondary-300: 171 77% 64%;
+  --secondary-400: 172 66% 50%;
+  --secondary-500: 173 80% 40%;
+  --secondary-600: 175 84% 32%;
+  --secondary-700: 175 77% 26%;
+  --secondary-900: 176 69% 22%;
+
+  --secondary: 173 80% 40%;
   --secondary-foreground: 0 0% 100%;
-  --secondary-light: 49 100% 67%;
-  --secondary-dark: 27 100% 33%;
+  --secondary-light: 172 66% 50%;
+  --secondary-dark: 175 84% 32%;
 
-  /* Accent Colors - #fbbf24 (Gold accent) */
-  --accent: 45 93% 58%;
-  --accent-foreground: 28 17% 10%;
-  --accent-light: 54 100% 72%;
+  /* Accent Colors - Warm Orange */
+  --accent-50: 33 100% 97%;
+  --accent-100: 34 100% 92%;
+  --accent-200: 32 98% 83%;
+  --accent-300: 31 97% 72%;
+  --accent-400: 27 96% 61%;
+  --accent-500: 25 95% 53%;
+  --accent-600: 21 90% 48%;
+  --accent-700: 17 88% 40%;
+  --accent-900: 15 79% 25%;
 
-  /* Neutral Colors - #78716c (Stone) */
-  --neutral: 30 5% 45%;
+  --accent: 25 95% 53%;
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 31 97% 72%;
+
+  /* Node Category Colors */
+  --prerequisite-main: 258 90% 66%; /* Purple */
+  --prerequisite-light: 250 95% 76%;
+  --prerequisite-bg: 270 100% 98%;
+  --prerequisite-border: 251 91% 73%;
+
+  --core-main: 150 50% 45%; /* Primary green */
+  --core-light: 142 77% 73%;
+  --core-bg: 138 100% 97%;
+  --core-border: 142 69% 58%;
+
+  --advanced-main: 25 95% 53%; /* Warm orange */
+  --advanced-light: 31 97% 72%;
+  --advanced-bg: 33 100% 97%;
+  --advanced-border: 27 96% 61%;
+
+  /* Status Colors */
+  --status-not-started: 210 14% 89%; /* Neutral gray */
+  --status-in-progress: 150 50% 45%; /* Primary green */
+  --status-completed: 142 71% 45%; /* Brighter green */
+  --status-skipped: 215 16% 47%; /* Dark gray */
+
+  /* Neutral Colors (Gray) */
+  --gray-50: 210 20% 98%;
+  --gray-100: 220 14% 96%;
+  --gray-200: 210 14% 89%;
+  --gray-300: 214 12% 82%;
+  --gray-400: 218 11% 65%;
+  --gray-500: 220 9% 46%;
+  --gray-600: 215 14% 34%;
+  --gray-700: 217 19% 27%;
+  --gray-800: 215 28% 17%;
+  --gray-900: 221 39% 11%;
+
+  --neutral: 220 9% 46%;
   --neutral-light: 220 14% 96%;
-  --neutral-dark: 215 28% 17%;
+  --neutral-dark: 217 19% 27%;
 
   /* Semantic Colors */
-  --success: 160 84% 39%;
+  --success: 142 71% 45%;
   --success-foreground: 0 0% 100%;
   --warning: 38 92% 50%;
-  --warning-foreground: 28 17% 10%;
-  --destructive: 0 84% 60%;
+  --warning-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --info: 217 91% 60%;
   --info-foreground: 0 0% 100%;
 
   /* Text Colors */
-  --foreground: 28 17% 10%;
-  --muted-foreground: 30 10% 34%;
+  --text-primary: 221 39% 11%;
+  --text-secondary: 220 9% 46%;
+  --text-tertiary: 218 11% 65%;
+  --text-disabled: 214 12% 82%;
+  --text-inverse: 0 0% 100%;
 
-  /* Background Colors */
+  --foreground: 221 39% 11%;
+  --muted-foreground: 220 9% 46%;
+
+  /* Background & Surface */
   --background: 0 0% 100%;
-  --secondary-bg: 45 93% 58% / 0.4;
-  --card: 210 20% 98%;
-  --card-foreground: 28 17% 10%;
+  --surface: 210 20% 98%;
+  --surface-hover: 220 14% 96%;
+  --secondary-bg: 138 100% 97%;
+  --card: 0 0% 100%;
+  --card-foreground: 221 39% 11%;
   --popover: 0 0% 100%;
-  --popover-foreground: 28 17% 10%;
-  --muted: 220 14% 96%;
+  --popover-foreground: 221 39% 11%;
+  --muted: 210 20% 98%;
 
-  /* Borders */
-  --border: 30 5% 90%;
-  --input: 30 5% 90%;
-  --ring: 30 97% 43%;
+  /* Border Colors */
+  --border-light: 210 14% 89%;
+  --border-default: 214 12% 82%;
+  --border-dark: 218 11% 65%;
+
+  --border: 210 14% 89%;
+  --input: 210 14% 89%;
+  --ring: 150 50% 45%;
 
   /* Border Radius */
-  --radius-sm-value: 0.25rem;
-  --radius-md-value: 0.5rem;
-  --radius-lg-value: 0.75rem;
-  --radius-xl-value: 1rem;
+  --radius-sm-value: 0.25rem; /* 4px */
+  --radius-md-value: 0.5rem; /* 8px */
+  --radius-lg-value: 0.75rem; /* 12px */
+  --radius-xl-value: 1rem; /* 16px */
+  --radius-2xl-value: 1.5rem; /* 24px */
   --radius-full-value: 9999px;
 
-  /* Shadows - with amber tint */
-  --shadow-sm-value: 0 1px 2px rgba(217, 119, 6, 0.1);
-  --shadow-md-value: 0 4px 6px rgba(217, 119, 6, 0.15);
-  --shadow-lg-value: 0 10px 15px rgba(217, 119, 6, 0.2);
-  --shadow-xl-value: 0 20px 25px rgba(217, 119, 6, 0.25);
+  /* Shadows */
+  --shadow-sm-value: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md-value: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg-value: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl-value: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl-value: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner-value: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Colored shadows (for primary elements) */
+  --shadow-primary-value: 0 10px 15px -3px rgba(57, 172, 115, 0.3),
+    0 4px 6px -2px rgba(57, 172, 115, 0.15);
+  --shadow-success-value: 0 10px 15px -3px rgba(16, 185, 129, 0.3),
+    0 4px 6px -2px rgba(16, 185, 129, 0.15);
 
   /* Spacing */
-  --spacing-xs-value: 0.25rem;
-  --spacing-sm-value: 0.5rem;
-  --spacing-md-value: 1rem;
-  --spacing-lg-value: 1.5rem;
-  --spacing-xl-value: 2rem;
-  --spacing-2xl-value: 3rem;
+  --spacing-xs-value: 0.25rem; /* 4px */
+  --spacing-sm-value: 0.5rem; /* 8px */
+  --spacing-md-value: 1rem; /* 16px */
+  --spacing-lg-value: 1.5rem; /* 24px */
+  --spacing-xl-value: 2rem; /* 32px */
+  --spacing-2xl-value: 3rem; /* 48px */
+  --spacing-3xl-value: 4rem; /* 64px */
+  --spacing-4xl-value: 6rem; /* 96px */
 
   /* Transitions */
-  --transition-fast: 0.15s ease-in-out;
-  --transition-base: 0.2s ease-in-out;
-  --transition-slow: 0.3s ease-in-out;
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Chart colors */
-  --chart-1: 38 92% 44%;
-  --chart-2: 160 84% 39%;
-  --chart-3: 43 96% 56%;
-  --chart-4: 217 91% 60%;
-  --chart-5: 0 84% 60%;
+  --chart-1: 150 50% 45%;
+  --chart-2: 173 80% 40%;
+  --chart-3: 25 95% 53%;
+  --chart-4: 258 90% 66%;
+  --chart-5: 217 91% 60%;
 }
 
 .dark {
-  /* Primary Colors */
-  --primary: 30 97% 43%;
+  /* Primary Colors - Vibrant Green (#39ac73) */
+  --primary: 150 50% 45%;
   --primary-foreground: 0 0% 100%;
-  --primary-light: 45 93% 58%;
-  --primary-dark: 25 87% 35%;
+  --primary-light: 142 69% 58%;
+  --primary-dark: 152 52% 36%;
 
-  /* Secondary Colors */
-  --secondary: 38 92% 50%;
+  /* Secondary Colors - Complementary Teal */
+  --secondary: 173 80% 40%;
   --secondary-foreground: 0 0% 100%;
-  --secondary-light: 49 100% 67%;
-  --secondary-dark: 27 100% 33%;
+  --secondary-light: 172 66% 50%;
+  --secondary-dark: 175 84% 32%;
 
-  /* Accent Colors */
-  --accent: 45 93% 58%;
-  --accent-foreground: 28 17% 10%;
-  --accent-light: 54 100% 72%;
+  /* Accent Colors - Warm Orange */
+  --accent: 25 95% 53%;
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 31 97% 72%;
 
   /* Neutral Colors */
-  --neutral: 30 5% 45%;
+  --neutral: 220 9% 46%;
   --neutral-light: 220 14% 96%;
-  --neutral-dark: 215 28% 17%;
+  --neutral-dark: 217 19% 27%;
 
   /* Semantic Colors */
-  --success: 160 84% 39%;
+  --success: 142 71% 45%;
   --success-foreground: 0 0% 100%;
   --warning: 38 92% 50%;
-  --warning-foreground: 28 17% 10%;
+  --warning-foreground: 221 39% 11%;
   --destructive: 0 62% 50%;
   --destructive-foreground: 0 0% 100%;
   --info: 217 91% 60%;
   --info-foreground: 0 0% 100%;
 
   /* Text Colors */
-  --foreground: 0 0% 98%;
-  --muted-foreground: 0 0% 65%;
+  --text-primary: 0 0% 98%;
+  --text-secondary: 218 11% 65%;
+  --text-tertiary: 220 9% 46%;
+  --text-disabled: 217 19% 27%;
+  --text-inverse: 221 39% 11%;
 
-  /* Background Colors */
-  --background: 28 17% 10%;
-  --card: 30 10% 12%;
+  --foreground: 0 0% 98%;
+  --muted-foreground: 218 11% 65%;
+
+  /* Background & Surface */
+  --background: 221 39% 11%;
+  --surface: 215 28% 17%;
+  --surface-hover: 217 19% 27%;
+  --secondary-bg: 151 49% 19%;
+  --card: 215 28% 17%;
   --card-foreground: 0 0% 98%;
-  --popover: 28 17% 10%;
+  --popover: 221 39% 11%;
   --popover-foreground: 0 0% 98%;
-  --muted: 30 10% 20%;
+  --muted: 217 19% 27%;
+
+  /* Border Colors */
+  --border-light: 217 19% 27%;
+  --border-default: 220 9% 46%;
+  --border-dark: 218 11% 65%;
 
   /* Borders */
-  --border: 30 10% 20%;
-  --input: 30 10% 20%;
-  --ring: 30 97% 43%;
+  --border: 217 19% 27%;
+  --input: 217 19% 27%;
+  --ring: 150 50% 45%;
+}
+
+/* Gradient Utilities */
+.gradient-primary-light {
+  background: linear-gradient(135deg, #f0fdf5 0%, #dcfce8 100%);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #39ac73 0%, #2d8a5c 100%);
+}
+
+.gradient-primary-dark {
+  background: linear-gradient(135deg, #2d8a5c 0%, #236b48 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #f0fdf5 0%, #ffffff 50%, #f0fdfc 100%);
+}
+
+.gradient-hero-alt {
+  background: linear-gradient(to bottom right, #f0fdf5, #dcfce8, #f0fdfc);
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(at 0% 0%, #f0fdf5 0px, transparent 50%),
+    radial-gradient(at 100% 0%, #f0fdfc 0px, transparent 50%),
+    radial-gradient(at 100% 100%, #dcfce8 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #ffffff 0px, transparent 50%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.gradient-warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.gradient-error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
 }
 
 /* Apply base styles */
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Toast Custom Styles - Matching HTML Design */
