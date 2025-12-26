@@ -1,0 +1,41 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central hub node -->
+  <circle cx="200" cy="200" r="50" fill="#39ac73"/>
+  
+  <!-- Connecting lines (simple, clean) -->
+  <g stroke="#39ac73" stroke-width="12" fill="none" stroke-linecap="round">
+    <!-- Top left -->
+    <line x1="165" y1="165" x2="110" y2="110"/>
+    
+    <!-- Top -->
+    <line x1="200" y1="150" x2="200" y2="80"/>
+    
+    <!-- Top right -->
+    <line x1="235" y1="165" x2="290" y2="110"/>
+    
+    <!-- Right -->
+    <line x1="250" y1="200" x2="320" y2="200"/>
+    
+    <!-- Bottom right -->
+    <line x1="235" y1="235" x2="290" y2="290"/>
+    
+    <!-- Bottom -->
+    <line x1="200" y1="250" x2="200" y2="320"/>
+    
+    <!-- Bottom left -->
+    <line x1="165" y1="235" x2="110" y2="290"/>
+    
+    <!-- Left -->
+    <line x1="150" y1="200" x2="80" y2="200"/>
+  </g>
+  
+  <!-- Outer nodes (uniform circles) -->
+  <circle cx="110" cy="110" r="32" fill="#39ac73"/>
+  <circle cx="200" cy="80" r="32" fill="#39ac73"/>
+  <circle cx="290" cy="110" r="32" fill="#39ac73"/>
+  <circle cx="320" cy="200" r="32" fill="#39ac73"/>
+  <circle cx="290" cy="290" r="32" fill="#39ac73"/>
+  <circle cx="200" cy="320" r="32" fill="#39ac73"/>
+  <circle cx="110" cy="290" r="32" fill="#39ac73"/>
+  <circle cx="80" cy="200" r="32" fill="#39ac73"/>
+</svg>

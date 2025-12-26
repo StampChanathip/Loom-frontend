@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/stores/authStore";
 import { logoutAction } from "@/app/actions/auth";
@@ -31,12 +32,18 @@ export default function Header() {
     <header className="bg-background border-b shadow-sm px-16 py-4">
       <nav className="flex items-center justify-between">
         {/* Left: Logo */}
-        <div className="flex-none">
+        <div className="flex">
           <Link
             href={isAuthenticated ? "/homepage" : "/landing"}
-            className="hover:cursor-pointer font-bold p-3 text-xl"
+            className="hover:cursor-pointer"
           >
-            App Name
+            <Image
+              src="/svg/loom-logo.svg"
+              alt="Loom Logo"
+              width={40}
+              height={40}
+              priority
+            />
           </Link>
         </div>
 

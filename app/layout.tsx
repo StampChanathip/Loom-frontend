@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code } from "next/font/google";
+import { Manrope, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import { QueryProviders } from "@/shared/providers/QueryProvider";
@@ -9,8 +9,8 @@ import { ToastProvider } from "@/shared/providers/ToastProvider";
 import ToastWrapper from "@/components/utils/ToastWrapper";
 import SessionInitializer from "@/components/providers/SessionInitializer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Loom - AI Learning Path Visualizer",
   description:
     "Transform any topic into an interactive, explorable visual map showing prerequisites, core concepts, and advanced topics with progress tracking.",
+  icons: {
+    icon: "/svg/loom-logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +41,7 @@ export default function RootLayout({
       <QueryProviders>
         <Suspense fallback={<Loading children={undefined} />}>
           <body
-            className={`${inter.variable} ${firaCode.variable} antialiased`}
+            className={`${manrope.variable} ${firaCode.variable} antialiased`}
           >
             <ToastProvider>
               <SessionInitializer />

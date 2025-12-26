@@ -128,7 +128,7 @@ export const theme = {
 
   typography: {
     fontFamily: {
-      sans: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      sans: '"Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
       mono: '"Fira Code", "Monaco", "Courier New", monospace',
     },
     fontSize: {
